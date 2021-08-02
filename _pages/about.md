@@ -1,8 +1,28 @@
 ---
 permalink: /about/
-title: "About"
+title: "关于我"
 ---
+English
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Hello
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+My name is Geng Zian
+
+Now living in Ningxia
+
+This is my personal blog
+
+At the same time, it acts as the picture library of my primary school
+
+
+中文
+
+你好
+
+我叫耿子安
+
+现居住于宁夏
+
+这是我的个人博客
+
+同时充当我小学的图片库
