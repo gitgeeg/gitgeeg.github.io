@@ -13,6 +13,8 @@ This is my personal blog
 
 At the same time, it acts as the picture library of my primary school
 
+Dream are dream , it's not joke.
+
 
 你好
 
