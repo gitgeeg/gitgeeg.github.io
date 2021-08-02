@@ -2,7 +2,6 @@
 permalink: /about/
 title: "关于我"
 ---
-English
 
 Hello
 
@@ -14,8 +13,6 @@ This is my personal blog
 
 At the same time, it acts as the picture library of my primary school
 
-
-中文
 
 你好
 
