@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "耿子安"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "梦想是可以被抓住的"
+  bio    : "梦想是可以被抓住的             it's Dreams are made to be caught"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
