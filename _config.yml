@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "耿子安"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "梦想是可以被抓住的"
   links:
