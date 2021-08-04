@@ -8,7 +8,7 @@
 particlesJS('particles-js', {
   particles: {
     color: '#ADD8E6',
-    shape: 'edge', // "circle", "edge" or "triangle"
+    shape: 'circle', // "circle", "edge" or "triangle"
     opacity: 1,
     size: 4,
     size_random: true,
@@ -35,7 +35,7 @@ particlesJS('particles-js', {
     mouse: {
       distance: 300
     },
-    detect_on: 'canvas', // "canvas" or "window"
+    detect_on: 'window', // "canvas" or "window"
     mode: 'grab',
     line_linked: {
       opacity: .5
