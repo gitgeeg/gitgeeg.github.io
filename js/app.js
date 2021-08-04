@@ -7,7 +7,7 @@
 /* config dom id (optional) + config particles params */
 particlesJS('particles-js', {
   particles: {
-    color: '#fff',
+    color: '#000000',
     shape: 'circle', // "circle", "edge" or "triangle"
     opacity: 1,
     size: 4,
