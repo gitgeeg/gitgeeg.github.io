@@ -43,7 +43,7 @@ particlesJS('particles-js', {
     events: {
       onclick: {
         enable: true,
-        mode: 'remove', // "push" or "remove"
+        mode: 'push', // "push" or "remove"
         nb: 4
       }
     }
