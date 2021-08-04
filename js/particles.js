@@ -143,7 +143,7 @@ function launchParticlesJS(tag_id, params){
   /* ---------- CANVAS functions ------------ */
 
   pJS.fn.canvasInit = function(){
-    pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
+    pJS.canvas.ctx = pJS.canvas.el.getContext('3d');
   };
 
   pJS.fn.canvasSize = function(){
