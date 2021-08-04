@@ -35,7 +35,7 @@ particlesJS('particles-js', {
     mouse: {
       distance: 300
     },
-    detect_on: 'window', // "canvas" or "window"
+    detect_on: 'canvas', // "canvas" or "window"
     mode: 'grab',
     line_linked: {
       opacity: .5
