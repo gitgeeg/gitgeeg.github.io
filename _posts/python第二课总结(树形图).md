@@ -1,4 +1,6 @@
 ---
 title: "python第二课总结(树形图)
 ---
- [python第二课变量总结.html](\python第二课变量总结.html) 
+
+
+![python第二课变量总结.html](\python第二课变量总结.html) 
