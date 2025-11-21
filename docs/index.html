@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人空间 </title>
+    <title>个人资料</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -33,39 +33,32 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
             flex: 1;
         }
 
         header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
             color: var(--primary);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            font-weight: 300;
         }
 
         .nav-tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             border-bottom: 1px solid var(--border);
         }
 
         .tab {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             cursor: pointer;
             font-size: 1.1rem;
             color: var(--secondary);
@@ -85,6 +78,7 @@
         .content-section {
             display: none;
             animation: fadeIn 0.5s ease;
+            min-height: 500px;
         }
 
         .content-section.active {
@@ -97,7 +91,7 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 400;
             margin-bottom: 1.5rem;
             color: var(--primary);
@@ -112,17 +106,18 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
         }
 
         .card {
             background: white;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--border);
+            min-height: 200px;
         }
 
         .card:hover {
@@ -143,78 +138,109 @@
             color: var(--accent);
         }
 
-        .placeholder {
-            background-color: var(--light);
-            height: 1.2rem;
-            margin-bottom: 0.8rem;
-            border-radius: 4px;
-            animation: pulse 2s infinite;
-        }
-
-        .placeholder.short {
-            width: 60%;
-        }
-
-        .placeholder.medium {
-            width: 80%;
-        }
-
-        .placeholder.long {
-            width: 100%;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 0.8; }
-            100% { opacity: 0.6; }
-        }
-
-        .skill-bar {
-            margin-bottom: 1rem;
-        }
-
-        .skill-name {
+        .project-links {
             display: flex;
-            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .project-link i {
+            margin-right: 5px;
+        }
+
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--light);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        .profile-text {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: var(--accent);
+        }
+
+        .github-link i {
+            margin-right: 8px;
+        }
+
+        .resource-list {
+            list-style: none;
+        }
+
+        .resource-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+
+        .resource-title {
+            font-weight: 500;
             margin-bottom: 0.5rem;
         }
 
-        .skill-bar-inner {
-            height: 6px;
-            background-color: var(--light);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background-color: var(--accent);
-            border-radius: 3px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-item i {
-            width: 30px;
-            color: var(--accent);
+        .resource-desc {
+            color: var(--secondary);
+            font-size: 0.9rem;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             color: var(--secondary);
             font-size: 0.9rem;
             border-top: 1px solid var(--border);
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
@@ -237,116 +263,94 @@
 <body>
     <div class="container">
         <header>
-            <p class="subtitle">欢迎访问</p>
+            <h1>个人资料</h1>
         </header>
 
         <div class="nav-tabs">
             <div class="tab active" data-target="projects">项目</div>
             <div class="tab" data-target="personal">简介</div>
-            <div class="tab" data-target="warehouse">文件库</div>
+            <div class="tab" data-target="warehouse">资料库</div>
         </div>
 
         <!-- 项目部分 -->
         <section id="projects" class="content-section active">
-          <i class="fas fa-rocket"></i> 项目展示</h2>
+            <h2 class="section-title"><i class="fas fa-code"></i> 项目</h2>
             <div class="card-grid">
                 <div class="card">
-                    <i class="fas fa-code"></i> 项目一</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
-                <div class="card">
-                    <i class="fas fa-mobile-alt"></i> 项目二</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
-        </section>
-
-        <!-- 个人部分 -->
-        <section id="personal" class="content-section">
-           <i class="fas fa-user"></i> 个人简介</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i> 教育背景</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                </div>
-                <div class="card">
-                    <i class="fas fa-briefcase"></i> 工作经历</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
-                <div class="card">
-                    <i class="fas fa-star"></i> 专业技能</h3>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>技能一</span>
-                            <span>--%</span>
-                        </div>
-                        <div class="skill-bar-inner">
-                            <div class="skill-progress" style="width: 0%"></div>
-                        </div>
+                    <h3 class="card-title"></i> 项目一</h3>
+                    <p>项目一的简要描述。这里可以详细介绍项目的功能、技术栈和实现过程。</p>
+                    <div class="project-links">
+                        <a href="https://github.com/gitgeeg" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fab fa-bilibili"></i> B站
+                        </a>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>技能二</span>
-                            <span>--%</span>
-                        </div>
-                        <div class="skill-bar-inner">
-                            <div class="skill-progress" style="width: 0%"></div>
-                        </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"></i> 项目二</h3>
+                    <p>项目二的简要描述。这里可以详细介绍项目的功能、技术栈和实现过程。</p>
+                    <div class="project-links">
+                        <a href="https://github.com/gitgeeg" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fab fa-bilibili"></i> B站
+                        </a>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>技能三</span>
-                            <span>--%</span>
-                        </div>
-                        <div class="skill-bar-inner">
-                            <div class="skill-progress" style="width: 0%"></div>
-                        </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"></i> 项目三</h3>
+                    <p>项目三的简要描述。这里可以详细介绍项目的功能、技术栈和实现过程。</p>
+                    <div class="project-links">
+                        <a href="https://github.com/gitgeeg" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="project-link" target="_blank">
+                            <i class="fab fa-bilibili"></i> B站
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 知识仓库部分 -->
+        <!-- 简介部分 -->
+        <section id="personal" class="content-section">
+		<div class="profile-content">
+                <div class="profile-image">
+                     <img src="https://github.com/gitgeeg.png" alt="头像" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="profile-text">
+                    <p>GTIC / BG9PQV</p>
+                </div>
+                <div class="profile-text">
+                    <p>Geek And a Ham </p>
+                </div>
+                <a href="https://github.com/gitgeeg" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub 
+                </a>
+            </div>
+        </section>
+
+        <!-- 资料库部分 -->
         <section id="warehouse" class="content-section">
-            <i class="fas fa-book"></i> 知识仓库</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-file-alt"></i> 技术文档</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
-                <div class="card">
-                    <i class="fas fa-lightbulb"></i> 学习笔记</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
-                <div class="card">
-                    <i class="fas fa-tools"></i> 资源工具</h3>
-                    <div class="placeholder short"></div>
-                    <div class="placeholder medium"></div>
-                    <div class="placeholder long"></div>
-                    <div class="placeholder long"></div>
-                </div>
+            <h2 class="section-title"><i class="fas fa-book"></i> 资料库</h2>
+            <div class="card">
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <div class="resource-title">文档</div>
+                        <a href="https://gitgeeg.github.io/诗集.pdf" class="github-link" target="_blank">
+                    <i class="fab fa-github"></i> 诗集
+                </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
 
     <footer>
-        <p> 2025 </p>
+        <p>Create As 2025</p>
     </footer>
 
     <script>
