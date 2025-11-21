@@ -1,16 +1,377 @@
-</strong>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人空间 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
 
+        :root {
+            --primary: #2c3e50;
+            --secondary: #7f8c8d;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --border: #bdc3c7;
+        }
 
+        body {
+            background-color: #f9f9f9;
+            color: var(--primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
 
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
 
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
 
-</p><p><a href="https://gitgeeg.github.io/诗集.pdf">
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 300;
+        }
 
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
 
+        .tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
 
+        .tab.active {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+        }
 
-    
-  
-    </body>
+        .tab:hover {
+            color: var(--primary);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        .placeholder {
+            background-color: var(--light);
+            height: 1.2rem;
+            margin-bottom: 0.8rem;
+            border-radius: 4px;
+            animation: pulse 2s infinite;
+        }
+
+        .placeholder.short {
+            width: 60%;
+        }
+
+        .placeholder.medium {
+            width: 80%;
+        }
+
+        .placeholder.long {
+            width: 100%;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.6; }
+        }
+
+        .skill-bar {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-bar-inner {
+            height: 6px;
+            background-color: var(--light);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            width: 30px;
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="subtitle">欢迎访问</p>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="tab active" data-target="projects">项目</div>
+            <div class="tab" data-target="personal">简介</div>
+            <div class="tab" data-target="warehouse">文件库</div>
+        </div>
+
+        <!-- 项目部分 -->
+        <section id="projects" class="content-section active">
+          <i class="fas fa-rocket"></i> 项目展示</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-code"></i> 项目一</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mobile-alt"></i> 项目二</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+        </section>
+
+        <!-- 个人部分 -->
+        <section id="personal" class="content-section">
+           <i class="fas fa-user"></i> 个人简介</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-graduation-cap"></i> 教育背景</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-briefcase"></i> 工作经历</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-star"></i> 专业技能</h3>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>技能一</span>
+                            <span>--%</span>
+                        </div>
+                        <div class="skill-bar-inner">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>技能二</span>
+                            <span>--%</span>
+                        </div>
+                        <div class="skill-bar-inner">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name">
+                            <span>技能三</span>
+                            <span>--%</span>
+                        </div>
+                        <div class="skill-bar-inner">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 知识仓库部分 -->
+        <section id="warehouse" class="content-section">
+            <i class="fas fa-book"></i> 知识仓库</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-file-alt"></i> 技术文档</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lightbulb"></i> 学习笔记</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tools"></i> 资源工具</h3>
+                    <div class="placeholder short"></div>
+                    <div class="placeholder medium"></div>
+                    <div class="placeholder long"></div>
+                    <div class="placeholder long"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p> 2025 </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // 更新标签状态
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应内容区域
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
 </html>
